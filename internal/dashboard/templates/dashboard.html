@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Task Queue Dashboard</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100">
+    <div class="container mx-auto px-4 py-8">
+        <h1 class="text-3xl font-bold mb-8">Task Queue Dashboard</h1>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
+            <div class="bg-white p-4 rounded shadow">
+                <h2 class="text-lg font-semibold mb-2">Total Tasks</h2>
+                <p class="text-2xl">{{.Stats.TotalTasks}}</p>
+            </div>
+            <div class="bg-white p-4 rounded shadow">
+                <h2 class="text-lg font-semibold mb-2">Active Workers</h2>
+                <p class="text-2xl">{{.Stats.ActiveWorkers}}</p>
+            </div>
+            <div class="bg-white p-4 rounded shadow">
+                <h2 class="text-lg font-semibold mb-2">Failed Tasks</h2>
+                <p class="text-2xl">{{.Stats.FailedTasks}}</p>
+            </div>
+            <div class="bg-white p-4 rounded shadow">
+                <h2 class="text-lg font-semibold mb-2">Success Rate</h2>
+                <p class="text-2xl">{{.Stats.SuccessRate}}%</p>
+            </div>
+        </div>
+
+        <div class="bg-white rounded shadow p-4">
+            <h2 class="text-xl font-bold mb-4">Recent Tasks</h2>
+            <table class="w-full">
+                <thead>
+                    <tr>
+                        <th class="text-left">ID</th>
+                        <th class="text-left">Name</th>
+                        <th class="text-left">Status</th>
+                        <th class="text-left">Created At</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {{range .RecentTasks}}
+                    <tr>
+                        <td>{{.ID}}</td>
+                        <td>{{.Name}}</td>
+                        <td>{{.Status}}</td>
+                        <td>{{.CreatedAt}}</td>
+                    </tr>
+                    {{end}}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+</html> 
