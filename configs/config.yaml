@@ -1,0 +1,25 @@
+api:
+  port: 8080
+  host: "0.0.0.0"
+
+workers:
+  count: 5
+  max_retries: 3
+
+redis:
+  host: "localhost"
+  port: 6379
+  db: 0
+
+postgres:
+  host: "localhost"
+  port: 5432
+  user: "taskqueue"
+  password: "password"
+  database: "taskqueue"
+
+rabbitmq:
+  host: "localhost"
+  port: 5672
+  user: "guest"
+  password: "guest"
