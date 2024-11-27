@@ -40,7 +40,7 @@ A scalable and distributed task queue system built with Go, designed to handle b
 1. Clone the repository:
 
 bash
-git clone https://github.com/yourusername/task-queue.git
+git clone https://github.com/XYM-2001/Distributed-Task-Queue-System.git
 cd task-queue
 
 2. Install dependencies:
